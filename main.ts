@@ -35,8 +35,6 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     if (mySprite == true) {
         mySprite = false
         multisingle2 = false
-        difficulty = game.askForNumber("Easy: 1, Medium: 2, or Hard: 3.")
-        bot_vy = 25 + 12.5 * (difficulty - 1)
         setGame()
     }
 })
@@ -285,9 +283,9 @@ controller.player1.onButtonEvent(ControllerButton.Right, ControllerButtonEvent.P
 })
 function botStart () {
     if (ball.y < pong2.y) {
-        pong2.vy = -1 * bot_vy
+        pong2.vy = -37.5
     } else if (ball.y > pong2.y) {
-        pong2.vy = bot_vy
+        pong2.vy = 37.5
     }
 }
 controller.player2.onButtonEvent(ControllerButton.Right, ControllerButtonEvent.Released, function () {
@@ -341,8 +339,6 @@ let rando = 0
 let bot_side = 0
 let abc = 0
 let ball_side = false
-let bot_vy = 0
-let difficulty = 0
 let multisingle2 = false
 let single: Sprite = null
 let multi: Sprite = null
